@@ -1,0 +1,74 @@
+<<<<<<< HEAD
+// SUBARRAY WITH K DIFFERENT INTEGERS
+// TC => O(2N)
+// SC => O(N)
+
+import java.util.*;
+public class Main
+{
+    
+    static int subarraysWithKDistinct(int[] nums, int k) {
+        return atMost(nums, k) - atMost(nums, k - 1);
+    }
+
+    static int atMost(int[] nums, int k) {
+        int left = 0;
+        int count = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int right = 0; right < nums.length; right++) {
+            map.put(nums[right], map.getOrDefault(nums[right], 0) + 1);
+            while (map.size() > k) {
+                map.put(nums[left], map.get(nums[left]) - 1);
+                if (map.get(nums[left]) == 0) {
+                    map.remove(nums[left]);
+                }
+                left++;
+            }
+            count += right - left + 1;
+        }
+        return count;
+    }
+	public static void main(String[] args) {
+	    int[]nums ={1,2,1,2,3};
+	    int k = 2;
+	    int ans = subarraysWithKDistinct(nums,k);
+		System.out.println("SUBARRAY WITH K DIFFERENE INTEGERS IS : " + ans);
+	}
+=======
+// SUBARRAY WITH K DIFFERENT INTEGERS
+// TC => O(2N)
+// SC => O(N)
+
+import java.util.*;
+public class Main
+{
+    
+    static int subarraysWithKDistinct(int[] nums, int k) {
+        return atMost(nums, k) - atMost(nums, k - 1);
+    }
+
+    static int atMost(int[] nums, int k) {
+        int left = 0;
+        int count = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int right = 0; right < nums.length; right++) {
+            map.put(nums[right], map.getOrDefault(nums[right], 0) + 1);
+            while (map.size() > k) {
+                map.put(nums[left], map.get(nums[left]) - 1);
+                if (map.get(nums[left]) == 0) {
+                    map.remove(nums[left]);
+                }
+                left++;
+            }
+            count += right - left + 1;
+        }
+        return count;
+    }
+	public static void main(String[] args) {
+	    int[]nums ={1,2,1,2,3};
+	    int k = 2;
+	    int ans = subarraysWithKDistinct(nums,k);
+		System.out.println("SUBARRAY WITH K DIFFERENE INTEGERS IS : " + ans);
+	}
+>>>>>>> f22e72f (DAY32)
+}
