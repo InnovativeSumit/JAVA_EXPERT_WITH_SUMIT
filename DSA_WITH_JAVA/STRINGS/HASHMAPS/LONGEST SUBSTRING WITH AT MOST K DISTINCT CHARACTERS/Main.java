@@ -11,7 +11,7 @@ class Main {
         int l = 0;
         int r = 0;
         HashMap<Character, Integer> mpp = new HashMap<>();
-        while (r < s.length()) {
+        while  (r < s.length()) {
             // Add character to map
             mpp.put(s.charAt(r),
                     mpp.getOrDefault(s.charAt(r), 0) + 1);
