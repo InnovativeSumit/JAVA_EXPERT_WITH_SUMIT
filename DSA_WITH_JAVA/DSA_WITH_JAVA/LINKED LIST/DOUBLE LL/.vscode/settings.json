@@ -1,0 +1,14 @@
+{
+    "code-runner.runInTerminal": true,        // Run output in terminal
+    "code-runner.saveFileBeforeRun": true,    // Save file before execution
+    "code-runner.clearPreviousOutput": true,  // Clear terminal before run
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "C_Cpp.default.cppStandard": "c++17",     // Set C++ standard
+    "files.associations": {
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "random": "cpp"
+    }
+}

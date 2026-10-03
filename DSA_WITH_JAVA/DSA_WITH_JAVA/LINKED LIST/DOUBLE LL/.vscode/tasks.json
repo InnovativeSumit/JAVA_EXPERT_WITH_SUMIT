@@ -1,0 +1,23 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++",             // Task name
+            "type": "shell",                  // Use shell command
+            "command": "g++",
+            "args": [
+                "-g",                         // Enable debugging
+                "${file}",                    // Current file
+                "-o",                         
+                "${fileDirname}/${fileBasenameNoExtension}.exe", // Output .exe
+                "--std=c++17"                 // C++ standard
+            ],
+            "group": {
+                "kind": "build",              // Bind to Build command
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],       // Capture errors
+            "detail": "Compiler: g++"
+        }
+    ]
+}
